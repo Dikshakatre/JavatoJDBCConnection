@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Assignment 3</title>
+        <script> 
+            function isValidInput()                                    
+            { 
+                var isValid = true;
+                var username = document.forms["authForm"]["username"];               
+                var password = document.forms["authForm"]["pass"];    
+                var usercode = document.forms["authForm"]["usercode"];  
+                
+                if (username.value === "")                                  
+                { 
+                    window.alert("You entered wrong username, please try again."); 
+                    username.focus();
+                    username.style.borderColor = "red";
+                    isValid = false; 
+                } 
+
+                if (password.value === "")                               
+                { 
+                    window.alert("You entered wrong password, please try again"); 
+                    password.focus(); 
+                    password.style.borderColor = "red";
+                    isValid = false; 
+                } 
+
+                if (usercode.value === "")                                   
+                {
+                    window.alert("You entered wrong usercode, please try again."); 
+                    usercode.focus(); 
+                    usercode.style.borderColor = "red";
+                    isValid =  false; 
+                }                
+                return isValid; 
+            }
+        </script> 
+    </head>
+
+    <body  bgcolor="#FDF5E6">
+    
+    <center>
+      
+      <h1><b>User authentication System</b></h1>
+    <!--<form action="http://localhost:8080/Assgnment2/Main" method="post">-->
+    <form action="Main" method="post" onsubmit="return isValidInput()" name="authForm">
+      UserName:<input type="text" name="username"><br>
+      <br>
+      Password:<input type="password" name="pass" ><br>
+      <br>
+      Usercode:<input type="number" name="usercode" ><br>
+      <br><br>
+      <input type="submit" value="Submit" style="padding: 5px 20px 5px 20px">
+    
+    </form>
+  </center>
+</body>
+</html>
+
